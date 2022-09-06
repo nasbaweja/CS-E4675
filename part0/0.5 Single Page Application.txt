@@ -1,0 +1,24 @@
+title 0.5 Single Page Application
+
+note over Browser:
+Insert note and submit form
+end note
+
+
+Browser->Server:HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+Server-->Browser: Server sends HTML Page (spa.html)
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+Server-->Browser: Server sends the CSS code for styling (main.css)
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+Server-->Browser: Server sends Javascript code for the functionality (spa.js)
+
+note over Browser:
+Browser executes .js code 
+which request .json data from the Server
+end note
+
+Browser->Server: HTTP GET ttps://studies.cs.helsinki.fi/exampleapp/data.json
+
+note over Browser:
+Server executes the note to the Browser
+end note

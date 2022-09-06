@@ -1,0 +1,31 @@
+title 0.4 New Note
+
+note left of Browser:
+User writes a note and submits the request
+end note
+
+Browser->Server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+
+note right of Server:
+Server performs actions to save the note in a database
+end note
+
+Server-->Browser: Status: 302 - Redirect https://studies.cs.helsinki.fi/exampleapp/notes
+
+note left of Browser:
+Page Reloads
+end note
+
+Browser-->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+Server-->Browser: Server sends HTML Page
+Browser-->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+Server-->Browser: Server sends the CSS code for styling
+Browser-->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+Server-->Browser: Server sends Javascript code for the functionality
+
+note left of Browser:
+The Browser starts executing the javascript code,\n and assembling the HTML page along \nwith the Javascript functionality.
+end note
+
+Browser-->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+Server-->Browser: The server returns the Data.json file to the browser. 

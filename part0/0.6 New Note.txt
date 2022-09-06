@@ -1,0 +1,10 @@
+title 0.6 New Note
+
+Browser->Server:HTTP POST https://studies.cs.helsinki.fi/exampleapp/spa
+
+note over Browser:
+We get the new note,
+new_note_spa, contains: {"message":"note created"}
+end note
+
+Server-->Browser: Status code 201 and spa.js
