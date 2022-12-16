@@ -3,12 +3,10 @@ const usersRouter = require('express').Router()
 const UserModel = require('../model/users')
 
 usersRouter.get('/', async (request, response) => {
-    const users = await User
-      .find({}).populate('blogs', { url: 1, title: 1 })
-  
+    const users = await UserModel.find({}).populate('blogs', { url: 1, title: 1 })
     response.json(users.map(u => u.toJSON()))
   })
-  
+
 usersRouter.post('/', async (request, response) => {
   const body = request.body
   const rounds = 10

@@ -57,10 +57,7 @@ blogsRouter.delete('/:id', async (request, response) => {
 
     const blogID = request.params.id
     const blog = await Balrog.findById(blogID)
-    // await Balrog.findByIdAndRemove(id)
-    // response.status(204).end()
-    // console.log(blog)
-    if (blog.creator.toString() === decodedToken.id) {
+    if (blog.user.toString() === decodedToken.id) {
         await Balrog.findByIdAndRemove(blogID)
         response.status(204).end()
       }
